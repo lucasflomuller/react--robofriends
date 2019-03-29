@@ -14,9 +14,7 @@ class CounterButton extends Component {
   }
 
   updateCount = () => {
-    this.setState((previousState) => {
-      return { ...previousState, count: previousState.count + 1 }
-    });
+    this.setState(previousState => ({ ...previousState, count: previousState.count + 1 }));
   }
 
   render() {
