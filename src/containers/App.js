@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
+import Header from "../components/Header";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
@@ -24,13 +25,13 @@ class App extends Component {
       <h1>Loading...</h1> :
       (
       <div className="tc">
-        <h1>Robofriends</h1>
-        <SearchBox searchChange={onSearchChange} />
-        <Scroll>
-          <ErrorBoundary>
-            <CardList robots={filteredRobots} />
-          </ErrorBoundary>
-        </Scroll>
+        <Header />
+          <SearchBox searchChange={onSearchChange} />
+          <Scroll>
+            <ErrorBoundary>
+              <CardList robots={filteredRobots} />
+            </ErrorBoundary>
+          </Scroll>
       </div>
       )
     }
