@@ -4,7 +4,12 @@ import CounterButton from './CounterButton';
 
 it('expect to render CounterButton component', () => {
   const mockColor = 'red';
-  expect(shallow(<CounterButton color={mockColor} />)).toMatchSnapshot();
+  const wrapper = shallow(<CounterButton color={mockColor} />);
+
+  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.props()).toHaveProperty('color', 'red');
+  expect(wrapper.props()).toHaveProperty('onClick');
+
 });
 
 it('should correctly increments the counter', () => {
